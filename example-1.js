@@ -1,8 +1,28 @@
 import {createAll, cleanConsole} from './data';
 const companies = createAll();
 
-cleanConsole(1, companies);
-console.log('---- EXAMPLE 1 --- ', 'Put here your function');
+
+
+function orderData(data) {
+  const companies = data.map(company => {
+    company.users = replaceUndefined(company.users);
+    return company;
+  })
+  
+  cleanConsole(1, companies);
+  console.log('---- EXAMPLE 1 --- ', 'Put here your function');
+}
+
+function replaceUndefined(data) {
+  return data.map(user => {
+    user.firstName = user.firstName ? user.firstName : '';
+    user.lastName = user.lastName ? user.lastName : '';
+    return user
+  })
+}
+
+
+orderData(companies);
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
