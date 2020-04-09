@@ -1,9 +1,20 @@
-import {cleanConsole, createAll} from './data';
-const companies = createAll();
+import { cleanConsole, createAll } from './data'
+const companies = createAll()
 
-cleanConsole(2, companies);
-console.log('---- EXAMPLE 2 --- ', 'Put here your function');
+function validateCompanies (data, hasCar) {
+  const companies = data.map(company => {
+    company.users = filterUser(company.users, hasCar)
+    company.usersLength = company.users.length
+    return company
+  })
 
+  cleanConsole(2, companies)
+  console.log('---- EXAMPLE 2 --- ', 'Put here your function')
+}
+
+const filterUser = (users, hasCar) => users.filter(user => user.car === hasCar)
+
+validateCompanies(companies, false)
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
