@@ -1,48 +1,50 @@
-import {createAll, cleanConsole} from './data';
-const companies = createAll();
+import { createAll, cleanConsole } from './data'
+const companies = createAll()
 
+cleanConsole(1, orderData(companies))
+console.log('---- EXAMPLE 1 --- ', 'Put here your function')
 
-
-function orderData(data) {
-  const companies = data.map(company => {
-    company.users = replaceUndefined(company.users);
-    company.name = capitalize(company.name)
-    return company;
-  }).sort(orderCompanies)
-
-  cleanConsole(1, companies);
-  console.log('---- EXAMPLE 1 --- ', 'Put here your function');
+export function orderData (data) {
+  const companies = data
+    .map(company => {
+      company.users = replaceUndefined(company.users)
+      company.name = capitalize(company.name)
+      return company
+    })
+    .sort(orderCompanies)
+  return companies
 }
 
-function replaceUndefined(data) {
-  return data.map(user => {
-    user.firstName = user.firstName ? capitalize(user.firstName) : '';
-    user.lastName = user.lastName ? capitalize(user.lastName) : '';
-    return user
-  }).sort(orderUsers)
+function replaceUndefined (data) {
+  return data
+    .map(user => {
+      user.firstName = user.firstName ? capitalize(user.firstName) : ''
+      user.lastName = user.lastName ? capitalize(user.lastName) : ''
+      return user
+    })
+    .sort(orderUsers)
 }
 
-function capitalize(word) {
-  return typeof word !== 'string' ? '' : word.charAt(0).toUpperCase() + word.slice(1)
+function capitalize (word) {
+  return typeof word !== 'string'
+    ? ''
+    : word.charAt(0).toUpperCase() + word.slice(1)
 }
 
-function orderCompanies(b, a) {
-  return a.users.length - b.users.length;
+function orderCompanies (b, a) {
+  return a.users.length - b.users.length
 }
 
-function orderUsers(a, b) {
+function orderUsers (a, b) {
   if (a.firstName > b.firstName) {
-    return 1;
+    return 1
   }
   if (a.firstName < b.firstName) {
-    return -1;
+    return -1
   }
   // a must be equal to b
-  return 0;
+  return 0
 }
-
-
-orderData(companies);
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
