@@ -3,20 +3,19 @@ const companies = createAll()
 
 console.log('---- EXAMPLE 4 --- ', 'Put here your function')
 
-function createTableUser (companies) {
-  const users = companies
+export function createTableUser (companies) {
+  return companies
     .map(company => {
       const users = setCompany(company.users, company.name)
       return users
     })
     .flat()
     .sort((a, b) => a.age - b.age)
-  console.log('createTableUser -> users', users)
 }
 
 const setCompany = (users, company) => users.map(user => ({ ...user, company }))
 
-createTableUser(companies)
+console.log(createTableUser(companies))
 
 console.log('---- EXAMPLE 4 --- ', 'Put here your function')
 
