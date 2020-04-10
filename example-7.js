@@ -14,6 +14,24 @@ const getCompanies = id => companies.filter(company => company.id !== id)
 console.log(getCompanies(1))
 
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function')
+function updateCompany (id) {
+  const dataUpdated = {
+    name: 'company renamed',
+    users: [],
+    isOpen: false,
+    usersLength: 5
+  }
+  const company = companies.find(company => company.id === id)
+  for (const [key, value] of Object.entries(dataUpdated)) {
+    if (key === 'users') {
+      continue
+    }
+    company[key] = value
+  }
+  return companies
+}
+console.log(updateCompany(3))
+
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function')
