@@ -1,8 +1,21 @@
-import {cleanConsole, createAll} from './data';
-const companies = createAll();
+import { cleanConsole, createAll } from './data'
+const companies = createAll()
 
-cleanConsole(4, companies);
-console.log('---- EXAMPLE 4 --- ', 'Put here your function');
+cleanConsole(4, companies)
+console.log('---- EXAMPLE 4 --- ', 'Put here your function')
+
+function createTableUser (companies) {
+  const users = companies
+    .map(company => {
+      const users = setCompany(company.users, company.name)
+      return users
+    })
+    .flat()
+}
+
+const setCompany = (users, company) => users.map(user => ({ ...user, company }))
+
+createTableUser(companies)
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
