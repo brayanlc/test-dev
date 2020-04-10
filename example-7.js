@@ -44,6 +44,20 @@ const newUser = { firstName: 'Juan', lastName: 'Delgado', age: 35, car: true }
 console.log(addUserToCompany(4, newUser))
 
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function')
+function updateCompanyPut (id) {
+  const dataUpdated = {
+    name: 'company renamed',
+    users: [],
+    isOpen: false,
+    usersLength: 5
+  }
+  delete dataUpdated.users
+  const indexCompany = companies.findIndex(company => company.id === id)
+  companies[indexCompany] = { ...companies[indexCompany], ...dataUpdated }
+  return companies
+}
+console.log(updateCompanyPut(5))
+
 console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function')
