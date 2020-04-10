@@ -1,9 +1,20 @@
-import {cleanConsole, createAll} from './data';
+import { createAll } from './data'
+import { createTableUser } from './example-4'
 
-const companies = createAll();
+const companies = createAll()
 
-cleanConsole(6, companies);
-console.log('---- EXAMPLE 6 --- ', 'Put here your function');
+console.log('---- EXAMPLE 6 --- ', 'Put here your function')
+
+function concatDataUser (companies) {
+  const users = createTableUser(companies)
+  const newUsers = users.map(user => {
+    return [user.firstName + user.lastName + user.age, user.car]
+  })
+  
+}
+console.log(concatDataUser(companies))
+
+console.log('---- EXAMPLE 6 --- ', 'Put here your function')
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -32,7 +43,7 @@ console.log('---- EXAMPLE 6 --- ', 'Put here your function');
 const example = {
   johnDoe32: true,
   BernardoMinet45: false,
-  alinaChef23: true,
-};
+  alinaChef23: true
+}
 
-console.log(example);
+console.log(example)
