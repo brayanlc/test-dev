@@ -1,9 +1,29 @@
-import {cleanConsole, createAll} from './data';
+import { cleanConsole, createAll } from './data'
 
-const companies = createAll();
+const companies = createAll()
 
-cleanConsole(3, companies);
-console.log('---- EXAMPLE 3 --- ', 'Put here your function');
+cleanConsole(3, companies)
+console.log('---- EXAMPLE 3 --- ', 'Put here your function')
+
+const isUpperCase = str => str === str.toUpperCase()
+
+function validateCompaniesByName (companies) {
+  for (let index = 0; index < companies.length; index++) {
+    let allUpperCase = companies[index].users.every(
+      user => isUpperCase(user.firstName) && isUpperCase(user.lastName)
+    )
+    if (!isUpperCase(companies[index].name) || !allUpperCase) {
+      return false
+    }
+  }
+  return true
+}
+
+validateCompaniesByName(companies)
+
+// info: No entendi moy bien si era probar que la primera letra estuviera en
+// Mayuscula como een el primer ejecicio o comprobar si toda la cadena estaba
+// en mayuscula, valide con la segunda opcion
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
