@@ -59,6 +59,14 @@ function updateCompanyPut (id) {
 console.log(updateCompanyPut(5))
 
 console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function')
+function deleteUserFromCompany (companyId, userId) {
+  const company = companies.find(company => company.id === companyId)
+  const indexUser = company.users.findIndex(user => user.id === userId)
+  company.users.splice(indexUser, 1)
+  return companies
+}
+console.log(deleteUserFromCompany(6, 3))
+
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function')
