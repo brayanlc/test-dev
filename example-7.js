@@ -68,6 +68,20 @@ function deleteUserFromCompany (companyId, userId) {
 console.log(deleteUserFromCompany(6, 3))
 
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function')
+function updateUser (companyId, userId) {
+  const dataUpdated = {
+    firstName: 'fist name',
+    age: 45,
+    car: true
+  }
+  const company = companies.find(company => company.id === companyId)
+  const user = company.users.find(user => user.id === userId)
+  for (const [key, value] of Object.entries(dataUpdated)) {
+    user[key] = value
+  }
+  return companies
+}
+console.log(updateUser(7, 0))
 console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function')
 
