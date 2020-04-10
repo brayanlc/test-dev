@@ -1,8 +1,26 @@
-import {cleanConsole, createAll} from './data';
-const companies = createAll();
+import { cleanConsole, createAll } from './data'
+import { createTableUser } from './example-4'
+import { from } from 'rxjs'
+const companies = createAll()
 
-cleanConsole(5, companies);
-console.log('---- EXAMPLE 5 --- ', 'Put here your function');
+console.log('---- EXAMPLE 5 --- ', 'Put here your function')
+
+function info (companies) {
+  const users = createTableUser(companies)
+  console.log("info -> users", users)
+  const size = users.length
+  const average = users.reduce((prev, curr) => prev + curr.age, 0) / size
+  const usersWithCar = users.filter(user => user.car)
+  const hasCar = usersWithCar.length
+  const averageWithCar =
+    usersWithCar.reduce((prev, curr) => prev + curr.age, 0) / hasCar
+
+  return { size, average, hasCar, averageWithCar }
+}
+
+console.log(info(companies))
+
+console.log('---- EXAMPLE 5 --- ', 'Put here your function')
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
