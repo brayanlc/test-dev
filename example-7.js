@@ -1,17 +1,23 @@
-import {cleanConsole, createAll} from './data';
+import { cleanConsole, createAll } from './data'
 
-const companies = createAll();
+const companies = [...createAll()]
 
-cleanConsole(7, companies);
-console.log('---- EXAMPLE 7 part 1 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 9 --- array original', [...companies])
+
+// cleanConsole(7, companies);
+console.log('---- EXAMPLE 7 part 1 --- ', 'Put here your function')
+const getNameCompany = id => companies.find(company => company.id === id).name
+console.log(getNameCompany(2))
+
+console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function')
+console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function')
+
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
