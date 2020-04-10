@@ -10,6 +10,9 @@ const getNameCompany = id => companies.find(company => company.id === id).name
 console.log(getNameCompany(2))
 
 console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function')
+const getCompanies = id => companies.filter(company => company.id !== id)
+console.log(getCompanies(1))
+
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function')
