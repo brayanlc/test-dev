@@ -1,7 +1,6 @@
 import { cleanConsole, createAll } from './data'
 const companies = createAll()
 
-cleanConsole(4, companies)
 console.log('---- EXAMPLE 4 --- ', 'Put here your function')
 
 function createTableUser (companies) {
@@ -12,11 +11,14 @@ function createTableUser (companies) {
     })
     .flat()
     .sort((a, b) => a.age - b.age)
+  console.log('createTableUser -> users', users)
 }
 
 const setCompany = (users, company) => users.map(user => ({ ...user, company }))
 
 createTableUser(companies)
+
+console.log('---- EXAMPLE 4 --- ', 'Put here your function')
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
