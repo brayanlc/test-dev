@@ -100,7 +100,18 @@ function updateUserPut (companyId, userId) {
 console.log(updateUserPut(0, 2))
 
 console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function')
+function transferUser (companyId1, companyId2, userId) {
+  const company1 = companies.find(company => company.id === companyId1)
+  const company2 = companies.find(company => company.id === companyId2)
+  const indexUser = company1.users.findIndex(user => user.id === userId)
+  company2.users.push(company1.users[indexUser])
+  company1.users.splice(indexUser, 1)
+  company1.usersLength = company1.users.length
+  company2.usersLength = company2.users.length
+}
+console.log(transferUser(1, 7, 5))
 
+console.log('---- EXAMPLE 7 part 9 ---  array final', [...companies])
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
