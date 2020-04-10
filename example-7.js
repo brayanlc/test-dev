@@ -33,6 +33,16 @@ function updateCompany (id) {
 console.log(updateCompany(3))
 
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function')
+function addUserToCompany (id, newUser) {
+  const company = companies.find(company => company.id === id)
+  const user = { ...newUser, id: new Date().getTime() }
+  company.users.push(user)
+  company.usersLength = company.users.length
+  return companies
+}
+const newUser = { firstName: 'Juan', lastName: 'Delgado', age: 35, car: true }
+console.log(addUserToCompany(4, newUser))
+
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function')
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function')
