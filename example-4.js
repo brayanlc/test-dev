@@ -11,6 +11,7 @@ function createTableUser (companies) {
       return users
     })
     .flat()
+    .sort((a, b) => a.age - b.age)
 }
 
 const setCompany = (users, company) => users.map(user => ({ ...user, company }))
