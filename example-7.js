@@ -82,7 +82,23 @@ function updateUser (companyId, userId) {
   return companies
 }
 console.log(updateUser(7, 0))
+
 console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function')
+function updateUserPut (companyId, userId) {
+  const dataUpdated = {
+    firstName: 'fist name',
+    lastName: 'last name',
+    age: 45,
+    car: true,
+    id: userId
+  }
+  const company = companies.find(company => company.id === companyId)
+  const indexUser = company.users.findIndex(user => user.id === userId)
+  company.users[indexUser] = { ...dataUpdated }
+  return companies
+}
+console.log(updateUserPut(0, 2))
+
 console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function')
 
 
