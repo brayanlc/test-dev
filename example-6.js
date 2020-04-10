@@ -10,7 +10,7 @@ function concatDataUser (companies) {
   const newUsers = users.map(user => {
     return [user.firstName + user.lastName + user.age, user.car]
   })
-  
+  return Object.fromEntries(newUsers)
 }
 console.log(concatDataUser(companies))
 
